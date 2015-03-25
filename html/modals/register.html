@@ -1,0 +1,57 @@
+    <div class="modal-header">
+            <h3 class="modal_alert">Register</h3>
+        </div>
+        <div class="modal-body modal_error_body">
+
+<form name="form" id="new_user" novalidate ng-submit="submitRegister()">
+    <div class="register_field">
+        <label for="user_name">Name</label><br />
+        <input id="user_name" ng-model="newUser.name" name="user_name" type="text" required ng-minlength="3" ng-focus />
+    
+        <div class="error" ng-show="form.user_name.$dirty && form.user_name.$invalid">
+            <small class="error" ng-show="form.user_name.$error.minlength">Your name is required.</small>
+        </div>
+    </div>
+    
+    <div class="register_field">
+        <label for="user_email">Email</label><br />
+        <input id="user_email" ng-model="newUser.email" name="user_email" ensure-unique-email ng-focus type="email" required />
+        <div class="error" ng-show="form.user_email.$dirty && form.user_email.$invalid">
+            <small class="error" ng-show="form.user_email.$error.required">Your email is required (ex: john@doe.com).</small>
+            <small class="error" ng-show="form.user_email.$error.email">That is not a valid email. Please input a valid email.</small>
+            <small class="error" ng-show="form.user_email.$error.unique">That email is already in use, please try another</small>
+        </div>
+    </div>  
+    
+	<div class="register_field">
+	   <label for="user_login">Username</label><br/>
+        <input id="user_login" ng-model="newUser.login" name="login" type="text" ensure-unique-login required ng-minlength="1" ng-focus/>   <br/><small>(This is your username; you'll use it when you log in)</small>
+	
+        <div class="error" ng-show="form.login.$dirty && form.login.$invalid">
+            <small class="error" ng-show="form.login.$error.minlength">Please enter a valid username</small>
+            <small class="error" ng-show="form.login.$error.unique">This username is taken, please try anoher</small>
+        </div>
+    </div>
+	
+	<div class="register_field">
+	   <label for="user_password">Password</label><br/>
+	   <input id="user_password" ng-model="newUser.password" name="password" type="text" required ng-minlength="6" ng-focus/>
+        
+        <div class="error" ng-show="form.password.$dirty && form.password.$invalid">
+            <small class="error" ng-show="form.password.$error.minlength">Password must be 6 characters long.</small>
+        </div>
+	</div>
+    
+   
+            
+            <div ng-if="new_user.error>''" class="error modal_login_error_desc">{{new_user.error_msg}}</div><br/><br/>
+            </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="cancelRegister()">Cancel</button>
+    
+        <button type="button" class="btn btn-primary" ng-disabled="form.$invalid" type="submit" ng-click="submitRegister()">Register</button>
+    </div>
+            
+            </form>
+    

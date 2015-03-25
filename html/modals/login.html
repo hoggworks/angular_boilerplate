@@ -1,0 +1,17 @@
+    <div class="modal-header">
+            <h3 class="modal_alert">Login</h3>
+        </div>
+        
+        <div class="modal-body modal_error_body">
+            <div>{{items.msg}}</div>
+            Please enter your username or email, along with your password, to proceed.<br/><br/>
+            <input id="login_user" type="text" placeholder="Username" ng-model="login.user" class="modal_login_user"><br/><br/>
+        <input id="login_pass" type="password" placeholder="Password" ng-model="login.password" class="modal_login_password">
+       <div ng-if="login.error>''" class="error modal_login_error_desc">{{login.error_msg}}</div><br/><br/>
+       <p>Don't have an account? <a ng-click="showRegister()">Click here to register.</a><br/>
+<a ng-click="showRecoverPassword()">Forget your password?</a></p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="cancelLogin()">Cancel</button>
+            <button class="btn btn-primary" ng-click="submitLogin()">Login</button>
+        </div>

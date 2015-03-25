@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="AppCtrl">
+<head lang="en">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body>
+    <!-- menu -->
+    <div ng-include src="'html/menu.html'" ng-controller="MenuCtrl"></div>
+         
+    <!-- page content -->
+    <div ng-view></div>
+
+    <!-- footer -->
+    <div ng-include src="'html/footer.html'"></div>
+    
+    <!-- google analytics tracking -->
+    <div ng-include src="'html/google_analytics.html'"></div>
+        
+    <!-- Framework includes -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-cookies.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-sanitize.min.js"></script> -->
+        
+    <!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+    <script type="text/javascript" src="vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="vendor/angular/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    
+    <!-- Application includes -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- Application includes: Controllers -->
+    <script type="text/javascript" src="js/controllers/AppCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/AdminCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/MainCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/ErrorCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/MenuCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/UserCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/NoUserAuthCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/NoAdminAuthCtrl.js"></script>
+    <script type="text/javascript" src="js/controllers/ModalInstanceCtrl.js"></script>
+    
+    <!-- Application includes: Services -->
+    <script type="text/javascript" src="js/services/UserService.js"></script>
+    <script type="text/javascript" src="js/services/SiteService.js"></script>
+    <script type="text/javascript" src="js/services/EmailService.js"></script>
+    
+    <!-- Application includes: Directives -->
+    <script type="text/javascript" src="js/directives/Directives.js"></script>
+    
+    <!-- Application includes: Modules -->
+    <script type="text/javascript" src="js/modules/Logger.js"></script>
+    <script type="text/javascript" src="js/modules/Stats.js"></script>
+    
+        
+</body>
+</html>

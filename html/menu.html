@@ -1,0 +1,8 @@
+<ul>
+    <li><a ng-click="goTo('/')">Home</a></li>
+    <li ng-if="UserService.logged()"><a ng-click="goTo('/user')">You</a></li>
+    <li ng-if="!UserService.logged()"><a ng-click="showLogin()">Login</a></li>
+    <li ng-if="UserService.logged()"><a ng-click="processLogout()">Logout</a></li>
+
+    <li ng-if="UserService.admin()"><a ng-click="goTo('/admin')">Admin</a></li>
+</ul>
